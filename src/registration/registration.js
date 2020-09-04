@@ -61,7 +61,7 @@ export default class Registration extends Component {
         </div>
         <Button type='submit'>
           Register
-                </Button>
+        </Button>
       </form >
     )
   }

@@ -1,5 +1,5 @@
 import TokenService from './TokenService';
-import config from './config';
+import config from '../config';
 
 const CarApiService = {
   getCars() {
@@ -24,5 +24,9 @@ const CarApiService = {
           ? res.json().then(e => Promise.reject())
           : res.json()
       )
-  }
+  },
+  //
+  
 }
+
+export default CarApiService;

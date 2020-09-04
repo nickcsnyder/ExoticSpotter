@@ -20,7 +20,7 @@ export class CarListProvider extends Component {
     this.setState({ error })
   }
 
-  clearError = error => {
+  clearError = () => {
     this.setState({ error: null })
   }
   setCarList = carList => {

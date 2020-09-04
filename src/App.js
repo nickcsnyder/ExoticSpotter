@@ -1,5 +1,5 @@
-import React, { component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { Component } from 'react';
+import {Route, Switch } from 'react-router-dom';
 import CarListPage from './routes/loginPage';
 import LoginPage from './routes/loginPage';
 import Registration from './routes/registrationPage';
@@ -9,7 +9,7 @@ import PublicRoute from './Utilities/publicRoute';
 
 // import './App.css';
 
-class App extends component {
+class App extends Component {
   state = { hasError: false }
   
   static getDerivedStateFromError(error) {
@@ -26,7 +26,8 @@ class App extends component {
           {this.state.hasError && <p className='red'>There was an error.</p>}
           <Switch>
           <Route
-            exact path={'/'}
+            exact 
+            path={'/'}
             component={CarListPage} 
             />
           <PublicRoute

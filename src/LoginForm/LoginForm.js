@@ -14,6 +14,8 @@ export default class LoginForm extends Component {
     this.setState({ error: null });
     const { user_name, password } = e.target;
 
+
+
     AuthApiService.postLogin({
       user_name: user_name.value,
       password: password.value
@@ -48,7 +50,9 @@ export default class LoginForm extends Component {
           <label htmlFor='LoginForm__password'>
             Password
           </label>
-          <Input required name='password'
+          <Input
+            required name='password'
+            type='password'
             id='LoginForm__password'>
           </Input>
         </div>
