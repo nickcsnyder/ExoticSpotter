@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Route, Switch } from 'react-router-dom';
-import CarListPage from './routes/loginPage';
+import CarListPage from './routes/CarListPage';
 import LoginPage from './routes/loginPage';
 import Registration from './routes/registrationPage';
 import Header from './header/header';
@@ -39,8 +39,8 @@ class App extends Component {
             component={Registration} 
             />
            {/* <PrivateRoute
-            path={'/update'} 
-            component={Update} 
+            path={'/content'} 
+            component={Content} 
             /> */}
             </Switch>
         </main>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 export default class CarList extends Component {
     render() {
         const { car } = this.props
@@ -11,6 +10,7 @@ export default class CarList extends Component {
                 <h2 className='CarListed__model'>{car.model}</h2>
                 <p className='CarListed__location'>{car.location}</p>
             </div>
+
         )
     }
 }
