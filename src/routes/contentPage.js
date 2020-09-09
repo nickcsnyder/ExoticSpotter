@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import CarListContext from '../contexts/CarListContext';
 import CarApiService from '../services/CarApiService';
 import { Section } from '../Utilities/Utilities';
-import CarList from '../carlist/carlist';
 import ContentForm from '../contentForm/contentForm';
 
 export default class CarListPage extends Component {
@@ -11,19 +10,14 @@ export default class CarListPage extends Component {
   componentDidMount() {
     this.context.clearError()
     CarApiService.getCars()
-      .then(this.context.setCarList)
+      .then(this.context.setContentForm)
       .catch(this.context.setError)
   }
 
   render() {
-    const { carList = [] } = this.context
+    
     return (
-      <Section list className='CarListPage'>
-        {carList.map(car =>
-          <CarList
-            key={car.id}
-            car={car} />
-        )}
+      <Section list className='ContentForm'>
         <ContentForm />
       </Section>
     )

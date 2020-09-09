@@ -6,7 +6,7 @@ import TokenService from '../services/token-services';
 export default class Header extends Component {
   handleLogoutClick = () => {
     TokenService.clearAuthToken()
-  };
+  }
 
   renderLogoutLink() {
     return (
@@ -35,6 +35,7 @@ export default class Header extends Component {
     )
   }
 
+
   render() {
     return <>
     <nav className='Header'>
@@ -45,8 +46,8 @@ export default class Header extends Component {
           </Link>
       </h1>
       {TokenService.hasAuthToken()
-        ? this.renderLoginLink()
-        : this.renderLogoutLink()}
+        ? this.renderLogoutLink()
+        : this.renderLoginLink()}
     </nav>
     </>
   }

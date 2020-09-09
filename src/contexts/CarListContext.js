@@ -5,7 +5,8 @@ const CarListContext = React.createContext({
   error: null,
   setError: () => {},
   clearError: () => {},
-  setCarList: () => {}
+  setCarList: () => {},
+  addContent: () => {}
 })
 export default CarListContext;
 
