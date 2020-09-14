@@ -26,7 +26,7 @@ const CarApiService = {
       )
   },
 
-  postCar(carId, text) {
+  createCar(carId, text) {
     return fetch(`${config.API_ENDPOINT}/carlist`, {
       method: 'POST',
       headers: {
@@ -41,6 +41,24 @@ const CarApiService = {
     .then(res =>
       (!res.ok)
       ? res.json().then(e => Promise.reject(e))
+      : res.json()
+      )
+  },
+
+  deleteCar(carId) {
+    return fetch(`${config.API_ENDPOINT}/carlist`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`
+      },
+      body: JSON.stringify({
+        carId:carId
+      }),
+    })
+    .then(res =>
+      (!res.ok)
+      ? res.json().then(e => Promise.reject())
       : res.json()
       )
   }

@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
-import CarListContext from '../contexts/CarListContext';
+import ContentContext from '../contexts/contentContext';
 import CarApiService from '../services/CarApiService';
 import { Button, Input, Required } from '../Utilities/Utilities';
 
 export default class ContentForm extends Component {
-  static contextType = CarListContext
+  static contextType = ContentContext
 
   handleSubmit = e => {
     e.preventDefault()
     const { content } = this.context
-    const { text } = e.target
+    const { Make } = e.target.elements
 
-    CarApiService.addContent(content.id, text.value)
-    console.log(content.id)
+    CarApiService.createCar(content.id, Make.value)
       .then(this.context.addContent)
       .then(() => {
-        text.value = ''
+        Make.value = ''
       })
       .catch(this.context.setError)
   }
